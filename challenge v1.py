@@ -1,4 +1,4 @@
-archivo = "e_also_big.txt" #Nombre del archivo
+archivo = "d_quite_big.txt" #Nombre del archivo
 f = open(archivo) #Cargar archivo
 lista = f.readlines()
 f.close()
@@ -31,18 +31,16 @@ listaI = [] #Lista del número de rebanadas
 listaII = [] #De los tipos de pizzas que se seleccionan
 
 Tipo = 0 # Cantidad de Pizzas que se seleccionan
-Indice = len(input2)-1
 
 for p in input2:
     if p < M and Tipo < N:
         M = M-p
         Tipo = Tipo+1
         listaI.append(p)
-        listaII.append(Indice)
+        listaII.append((len(input2)-1)-input2.index(p))
     else:
         M = M
         Tipo = Tipo
-    Indice = Indice -1
 
 puntos = puntaje(listaI) #Puntaje obtenido
 listaI.sort(reverse = False)
@@ -54,7 +52,7 @@ print(f"Rebanadas: {listaI}")
 print(f"Tipos de Pizza: {listaII}")
 
 # Guardar archivo en formato txt.
-res = open("e_also_big results.txt","w")
+res = open("res.txt","w")
 res.writelines(f"{Tipo}\n")
 for L in listaII:
     res.writelines(f"{str(L)}" + " ")
