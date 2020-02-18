@@ -52,8 +52,7 @@ print(f"Rebanadas: {listaI}")
 print(f"Tipos de Pizza: {listaII}")
 
 # Guardar archivo en formato txt.
-res = open("res.txt","w").close
-res = open("res.txt","a")
+res = open("res.txt","w")
 res.writelines(f"{Tipo}\n")
 for L in listaII:
     res.writelines(f"{str(L)}" + " ")
